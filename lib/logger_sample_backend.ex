@@ -1,6 +1,6 @@
 defmodule LoggerSampleBackend do
   @behaviour :gen_event
-  @path "./log/#{Mix.env()}.log"
+  @path "./log/sample.log"
   @format "$date $time [$level] $message"
 
   def init(__MODULE__) do
