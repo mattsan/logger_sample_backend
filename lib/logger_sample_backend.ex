@@ -34,4 +34,8 @@ defmodule LoggerSampleBackend do
   def handle_event(:flush, state) do
     {:ok, state}
   end
+
+  def handle_info({:io_reply, _, :ok}, state) do
+    {:ok, state}
+  end
 end
