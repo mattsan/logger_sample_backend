@@ -8,8 +8,8 @@ defmodule LoggerSampleBackend do
   end
 
   def handle_call({:configure, opts}, state) do
-    path = Keyword.get(opts, :path, @path)
-    format = Keyword.get(opts, :format, @format)
+    path = Keyword.get(opts, :path, state.path)
+    format = Keyword.get(opts, :format, state.format)
     new_state = %{state | path: path, format: format}
     {:ok, {:ok, new_state}, new_state}
   end
